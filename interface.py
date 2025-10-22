@@ -148,7 +148,7 @@ if (creditscore != None and
     check = True
 else:
     # st.write('NNO')
-    st.caption("If you see this message, it means you haven't filled in all the details yet.")
+    # st.caption("If you see this message, it means you haven't filled in all the details yet.")
     check = False
 
 if (check):
