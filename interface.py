@@ -1,12 +1,12 @@
 import streamlit as st
-import pickle
+import joblib
 import pandas as pd
-import matplotlib.pyplot as plt
-import time
-import numpy as np
+import os
 
-with open('bank_churn_model.pkl', 'rb') as f:
-    model = pickle.load(f)
+target_folder = "models"
+filename = f"bank_churn_RandomForest.pkl"
+full_path = os.path.join(target_folder, filename)
+model = joblib.load(full_path)
 
 def pred(creditscore, geo, gender, age, tenure, balance, num_prod, has_card, active_member, est_salary, complain, sat_score, card_type, points_earned):
     Customer = pd.DataFrame({
